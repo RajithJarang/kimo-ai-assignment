@@ -1,7 +1,7 @@
 .PHONY: test dev docker-build docker-compose-up docker-compose-down
 
 VERSION := 0.1.0
-IMAGE_NAME := releads-docker:$(VERSION)
+IMAGE_NAME := kimo.ai-docker:$(VERSION)
 
 test:
 	@docker run -itd --rm \
