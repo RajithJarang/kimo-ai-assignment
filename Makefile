@@ -15,6 +15,9 @@ test:
 dev:
 	@docker run -itd --rm \
 		--name mongodb \
+        -e MONGO_INITDB_ROOT_USERNAME=user \
+        -e MONGO_INITDB_ROOT_PASSWORD=password \
+        -e MONGO_INITDB_DATABASE=db_name \
 		-p 27017:27017 \
 		-v $(shell pwd)/data:/data/db \
 		mongo:6.0

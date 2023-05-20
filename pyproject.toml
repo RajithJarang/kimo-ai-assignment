@@ -7,7 +7,7 @@ authors = ["alexk1919"]
 [tool.poetry.dependencies]
 python = "^3.11.2"
 fastapi = "^0.92.0"
-motor = "^3.1.1"
+motor = "^3.1.2"
 gunicorn = "^20.1.0"
 PyYAML = "^6.0"
 uvicorn = "^0.20.0"

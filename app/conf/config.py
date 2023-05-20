@@ -13,11 +13,13 @@ class Config:
 
     app_settings = {
         'db_name': os.getenv('MONGO_DB'),
+        'db_collection': os.getenv('MONGO_DB_COLLECTION'),
         'mongodb_url': os.getenv('MONGO_URL'),
         'db_username': os.getenv('MONGO_USER'),
         'db_password': os.getenv('MONGO_PASSWORD'),
         'max_db_conn_count': os.getenv('MAX_CONNECTIONS_COUNT'),
         'min_db_conn_count': os.getenv('MIN_CONNECTIONS_COUNT'),
+        'courses_file': os.getenv('COURSES_FILE'),
     }
 
     @classmethod
