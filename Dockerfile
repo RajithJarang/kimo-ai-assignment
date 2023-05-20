@@ -13,6 +13,9 @@ WORKDIR /server
 
 RUN pip install --upgrade pip
 RUN pip install poetry
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install -y gcc python3-dev
 
 COPY pyproject.toml poetry.lock ./
 RUN poetry export --without-hashes --without dev -f requirements.txt -o requirements.txt && \
@@ -24,4 +27,5 @@ COPY --chown=appuser:appuser start.sh /server/
 COPY --chown=appuser:appuser app /server/app
 
 RUN chmod +x /server/start.sh
+
 ENTRYPOINT [ "/server/start.sh" ]
