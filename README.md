@@ -28,11 +28,11 @@ To see all the api endpoints
 
 Flow: loading data
   
-  check if the course documents are already loaded or not
-  if not then 
-      Load the course documents 
-      Create indexing for those documents 
-  All setup done
+  check if the course documents are already loaded or not <br />
+  if not then <br />
+      Load the course documents <br />
+      Create indexing for those documents <br />
+  All setup done <br />
  
   
   
