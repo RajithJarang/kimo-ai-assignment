@@ -4,15 +4,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: releads
+    container_name: api
     ports:
       - 8888:8888
-    environment:
-      - LOG_LEVEL=INFO
-      - MONGODB_URL=mongodb://mongodb/releads_fast?readPreference=secondaryPreferred&connectTimeoutMS=4000&maxIdleTimeMS=90000&heartbeatFrequencyMS=12000&w=majority&wTimeoutMS=6000
-      - MONGODB_DBNAME=releads_fast
-      - MAX_CONNECTIONS_COUNT=10
-      - MIN_CONNECTIONS_COUNT=3
+    env_file:
+      - .env.prod
     depends_on:
       - mongodb
 
@@ -20,6 +16,13 @@ services:
     image: mongo:latest
     container_name: mongodb
     volumes:
-      - /tmp/mongo:/data/db
+      - kimo_ai:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=kimo_ai
     ports:
       - 27017:27017
+
+volumes:
+  kimo_ai:
