@@ -9,7 +9,7 @@ load_dotenv()
 
 class Config:
     version = "0.1.0"
-    title = "releads"
+    title = "kimo.ai"
 
     app_settings = {
         'db_name': os.getenv('MONGO_DB'),
@@ -21,6 +21,7 @@ class Config:
         'min_db_conn_count': os.getenv('MIN_CONNECTIONS_COUNT'),
         'courses_file': os.getenv('COURSES_FILE'),
     }
+    print(app_settings)
 
     @classmethod
     def app_settings_validate(cls):

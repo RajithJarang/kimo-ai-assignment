@@ -15,7 +15,7 @@ handlers:
     filters: [sensitive_info]
   file_handler:
     class: logging.FileHandler
-    filename: app.log
+    filename: /tmp/app.log
     level: $LOG_LEVEL
     formatter: simple
     filters: [sensitive_info]
